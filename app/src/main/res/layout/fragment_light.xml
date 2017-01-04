@@ -1,0 +1,157 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:colorpicker="http://schemas.android.com/apk/res-auto"
+    xmlns:cont="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="300dp">
+
+        <com.jiangruicheng.btlight.myview.ColorPickView
+            android:id="@+id/color_picker_view"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="24dp"
+            android:gravity="center"
+            colorpicker:center_color="#FFFFFF"
+            colorpicker:center_radius="10dp"
+            colorpicker:circle_radius="110dp"/>
+
+        <ImageView
+            android:id="@+id/pw_sw"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/icon_pwr_sw"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="42dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/icon_speed"/>
+
+        <com.jiangruicheng.btlight.myview.discreteseekbar.DiscreteSeekBar
+            android:id="@+id/brightness"
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:layout_margin="6dp"
+            cont:dsb_max="100"
+            cont:dsb_min="0"
+            cont:dsb_progressColor="@color/text_color"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/led_imag"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/icon_led"/>
+
+            <TextView
+                android:id="@+id/led_text"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Led"
+                android:textColor="@color/black"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/color_imag"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/icon_rgb"/>
+
+            <TextView
+                android:id="@+id/color_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Color"
+                android:textColor="@color/black"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/romantic_imag"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/icon_romantic"/>
+
+            <TextView
+                android:id="@+id/romantic_text"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Romantic"
+                android:textColor="@color/black"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/disco_imag"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/icon_disco"/>
+
+            <TextView
+                android:id="@+id/disco_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disco"
+                android:textColor="@color/black"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

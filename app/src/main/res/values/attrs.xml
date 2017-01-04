@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="color_picker">
+
+        <!-- 背景圆的半径 -->
+        <attr name="circle_radius" format="dimension"/>
+        <!-- 可滑动小球的半径 -->
+        <attr name="center_radius" format="dimension"/>
+        <!-- 可滑动小球的颜色 -->
+        <attr name="center_color" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="DiscreteSeekBar">
+        <attr name="dsb_min" format="integer|dimension"/>
+        <attr name="dsb_max" format="integer|dimension"/>
+        <attr name="dsb_value" format="integer|dimension"/>
+        <attr name="dsb_mirrorForRtl" format="boolean"/>
+        <attr name="dsb_allowTrackClickToDrag" format="boolean"/>
+        <attr name="dsb_progressColor" format="color|reference"/>
+        <attr name="dsb_trackColor" format="color|reference"/>
+        <attr name="dsb_indicatorTextAppearance" format="reference"/>
+        <attr name="dsb_indicatorColor" format="color|reference"/>
+        <attr name="dsb_indicatorElevation" format="dimension"/>
+        <attr name="dsb_indicatorFormatter" format="string|reference"/>
+        <attr name="dsb_rippleColor" format="color|reference"/>
+        <attr name="dsb_indicatorPopupEnabled" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="Theme">
+        <attr name="discreteSeekBarStyle" format="reference"/>
+    </declare-styleable>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="wh">#FFFFFF</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="translucence">#b0000000</color>
+    <color name="dialog_line">#8F999999</color>
+    <color name="menu_bg_focus">#C8000000</color>
+    <color name="menu_bg_normal">#FF666666</color>
+    <color name="blue_light">#FF3366ff</color>
+    <color name="blue_deep">#FF003FFF</color>
+    <color name="red_deep">#FF584b</color>
+    <color name="purple">#ff584b</color>
+    <color name="backgroud">#66A1D2</color>
+    <color name="text_color">#ffffff</color>
+    <color name="select">#ff8000</color>
+    <color name="dialog_title_text_color">#333333</color>
+    <color name="dialog_btn_pressed">#00ca74</color>
+    <color name="line">#dfff00</color>
+    <color name="blue_hi_light">#90CAF9</color>
+    <color name="ksw_md_ripple_normal">#1E000000</color>
+    <color name="ksw_md_ripple_checked">#33019285</color>
+
+    <color name="ksw_md_solid_shadow">#33000000</color>
+
+    <color name="ksw_md_solid_normal">#ECECEC</color>
+    <color name="ksw_md_solid_checked">#019285</color>
+    <color name="ksw_md_solid_disable">#FFFFFF</color>
+    <color name="ksw_md_solid_checked_disable">#aaaaaa</color>
+
+</resources>
