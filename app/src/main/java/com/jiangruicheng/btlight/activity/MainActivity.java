@@ -23,7 +23,6 @@ import com.jiangruicheng.btlight.RXbus.RxBus;
 import com.jiangruicheng.btlight.adapter.BleAdapter;
 import com.jiangruicheng.btlight.adapter.DeviceAdpater;
 import com.jiangruicheng.btlight.ble.ConnBle;
-import com.jiangruicheng.btlight.ble.HandlerCmd;
 import com.jiangruicheng.btlight.ble.SendCmd;
 import com.jiangruicheng.btlight.eventtype.BluetoothSearch;
 import com.jiangruicheng.btlight.eventtype.ConnSucc;
@@ -111,16 +110,17 @@ public class MainActivity extends Activity {
                     connBle = new ConnBle();
                     sendCmd = connBle;
                     connBle.connble(device, MainActivity.this);
-                    connBle.registerhandler(new HandlerCmd() {
+                    /*connBle.registerhandler(new HandlerCmd() {
                         @Override
                         public void handler(byte[] data) {
 
                         }
-                    });
+                    });*/
                 }
             }
         });
-        if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
+        boolean isble = getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
             getble = RxBus.getDefault().toObservable(android.bluetooth.le.ScanResult.class).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<android.bluetooth.le.ScanResult>() {
                 @Override
                 public void onCompleted() {

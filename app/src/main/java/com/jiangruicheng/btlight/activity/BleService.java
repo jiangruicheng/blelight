@@ -4,6 +4,7 @@ import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.util.Log;
@@ -51,33 +52,35 @@ public class BleService extends Service {
 
             }
         });
-        spp_start = RxBus.getDefault().toObservable(BluetoothSearch.class).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Object>() {
-            @Override
-            public void onCompleted() {
+        if (spp_start == null) {
+            spp_start = RxBus.getDefault().toObservable(BluetoothSearch.class).observeOn(AndroidSchedulers.mainThread()).subscribe(new Observer<Object>() {
+                @Override
+                public void onCompleted() {
 
-            }
+                }
 
-            @Override
-            public void onError(Throwable e) {
+                @Override
+                public void onError(Throwable e) {
 
-            }
+                }
 
-            @Override
-            public void onNext(Object o) {
-                if (!bluetoothAdapter.isEnabled()) {
-                    Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-                    startActivity(enableBtIntent);
-                } else {
-
-                    if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
-                        bluetoothAdapter.startDiscovery();
+                @Override
+                public void onNext(Object o) {
+                    if (!bluetoothAdapter.isEnabled()) {
+                        Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
+                        startActivity(enableBtIntent);
                     } else {
-                        ScanBle scanBle = new ScanBle(bleAdapter, new Handler());
-                        scanBle.scantble();
+                        boolean b = Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE);
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE)) {
+                            ScanBle scanBle = new ScanBle(bleAdapter, new Handler());
+                            scanBle.scantble();
+                        } else {
+                            bluetoothAdapter.startDiscovery();
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
         return super.onStartCommand(intent, flags, startId);
     }
 

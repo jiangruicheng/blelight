@@ -69,13 +69,13 @@ public class ConnBle implements SendCmd {
 
     }
 
-    public void registerhandler(HandlerCmd handlerCmd) {
+    /*public void registerhandler(HandlerCmd handlerCmd) {
         this.handlerCmd = handlerCmd;
     }
-
-    public void unregisterhandler(HandlerCmd handlerCmd) {
-        this.handlerCmd = null;
-    }
+*/
+//    public void unregisterhandler(HandlerCmd handlerCmd) {
+//        this.handlerCmd = null;
+//    }
 
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     private void getserver(BluetoothGatt gatt) {
@@ -113,7 +113,7 @@ public class ConnBle implements SendCmd {
         @Override
         public void onCharacteristicChanged(BluetoothGatt gatt, BluetoothGattCharacteristic characteristic) {
             super.onCharacteristicChanged(gatt, characteristic);
-            handlerCmd.handler(characteristic.getValue());
+            //handlerCmd.handler(characteristic.getValue());
             reciveCmd.setCmd(characteristic.getValue());
             RxBus.getDefault().post(reciveCmd);
             Log.i("blerecive", "onCharacteristicChanged: " + reciveCmd.getCmd().toString());
